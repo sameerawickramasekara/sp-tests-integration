@@ -7,6 +7,7 @@ FILE1=${DIR}/infrastructure.properties
 FILE2=${DIR}/testplan-props.properties
 k8s_properties=${DIR}/k8s.properties
 
+export KUBECONFIG=/home/ubuntu/.kube/config-product-sp
 cat $k8s_properties
 
 PRODUCT_GIT_URL=$(grep "PRODUCT_GIT_URL" $FILE2 | awk -F= '{print $2}' | sed 's/\\//g')
