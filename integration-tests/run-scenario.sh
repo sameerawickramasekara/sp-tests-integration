@@ -13,6 +13,8 @@ PRODUCT_GIT_URL=$(grep "PRODUCT_GIT_URL" $FILE2 | awk -F= '{print $2}' | sed 's/
 PRODUCT_GIT_BRANCH=$(grep "PRODUCT_GIT_BRANCH" $FILE2 | awk -F= '{print $2}' | sed 's/\\//g')
 KUBERNETES_MASTER=$(grep "PRODUCT_GIT_BRANCH" $FILE2 | awk -F= '{print $2}' | sed 's/\\//g')
 
+echo $KUBECONFIG
+
 mkdir $DIR/product-sp
 git clone $PRODUCT_GIT_URL $DIR/product-sp >&1
 
